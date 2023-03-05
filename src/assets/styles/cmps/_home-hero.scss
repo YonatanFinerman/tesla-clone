@@ -3,7 +3,7 @@
     height: 100vh;
     background-size: cover;
     background-position: center;
-    background-image: url('../../img/model-s.jpg');
+    // background-image: url('../../img/model-s.jpg');
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -13,6 +13,10 @@
     header {
         padding-top: 15vh;
         text-align: center;
+
+        h1{
+            font-size: 2rem;
+        }
     }
 
     .btn-group {
