@@ -4,13 +4,11 @@ import { SideBar } from "./side-bar";
 import { selectCars } from "../features/car/carSlice";
 import { useSelector } from "react-redux";
 
-
 export function AppHeader() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const cars = useSelector(selectCars)
-    console.log(cars)
-
+ 
     function onCloseSideBar() {
         setIsMenuOpen(false)
     }
@@ -18,8 +16,7 @@ export function AppHeader() {
     return <header className="app-header">
         <a href="">
             <svg width="100" height="24" xmlns="http://www.w3.org/2000/svg">
-                {/* <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ --> */}
-
+                
                 <g>
                     <title>background</title>
                     <rect fill="none" id="canvas_background" height="15" width="100" y="-1" x="-1" />

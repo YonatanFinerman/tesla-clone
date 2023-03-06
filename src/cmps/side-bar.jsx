@@ -8,11 +8,14 @@ export function SideBar({isMenuOpen,onCloseSideBar,cars}) {
             {cars.map((car,idx)=>{
                 return  <li key={idx}><a href="#">{car}</a></li>
             })}
+            <li><a href="#">Cybertruck</a></li>
+            <li><a href="#">Roadaster</a></li>
+            <li><a href="#">Shop</a></li>
             <li><a href="#">Existing inventory</a></li>
             <li><a href="#">Used inventory</a></li>
             <li><a href="#">Trade-in</a></li>
-            <li><a href="#">Cybertruck</a></li>
-            <li><a href="#">Roadaster</a></li>
+            <li><a href="#">Tesla Account</a></li>
+
         </ul>}
 
     </section>
