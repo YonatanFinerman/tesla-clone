@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { MdMenu } from "react-icons/md";
 import { SideBar } from "./side-bar";
+import { selectCars } from "../features/car/carSlice";
+import { useSelector } from "react-redux";
 
 
 export function AppHeader() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const cars = useSelector(selectCars)
+    console.log(cars)
 
-    function onCloseSideBar(){
+    function onCloseSideBar() {
         setIsMenuOpen(false)
     }
 
@@ -30,15 +34,14 @@ export function AppHeader() {
                     </g>
                 </g>
             </svg>
-            {/* <img src={`${require(`../assets/img/logo}.svg`)}`} alt="" /> */}
         </a>
 
         <nav>
-            <p><a href="#">Model S</a></p>
-            <p><a href="#">Model 3</a></p>
-            <p><a href="#">Model X</a></p>
-            <p><a href="#">Model Y</a></p>
-          
+            {cars && cars.map((car, idx) => {
+
+                return <p><a href="#" key={idx}>{car}</a></p>
+            })}
+
         </nav>
         <div className="shop-menu">
             <a href="#">Shop</a>
@@ -46,9 +49,9 @@ export function AppHeader() {
             <div onClick={() => {
                 setIsMenuOpen(prev => !prev)
             }}><MdMenu /></div>
-            {/* <a href="#">Shop</a> */}
+            
         </div>
 
-       <SideBar isMenuOpen={isMenuOpen} onCloseSideBar={onCloseSideBar}/>
+        <SideBar isMenuOpen={isMenuOpen} onCloseSideBar={onCloseSideBar} cars={cars}/>
     </header>
 }
