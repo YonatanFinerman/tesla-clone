@@ -5,7 +5,7 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    right: 0;
+    right: -300px;
     background-color: $clr2;
     width: 300px;
     list-style: none;
@@ -13,6 +13,19 @@
     display: flex;
     flex-direction: column;
     text-align: start;
+    transition: 0.7s;
+    
+
+    &.open{
+        transform: translateX(-300px);
+        opacity: 1;
+    }
+    &.closed{
+        transform: translateX(300px);
+        opacity: 0;
+    }
+
+
 
     li{
         padding: 15px 5px;

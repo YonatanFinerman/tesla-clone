@@ -12,12 +12,13 @@
    
     nav{
         display: none;  
-
+      
         @include for-normal-layout {
             display: flex;
             align-items: center;
             justify-content: center;
             flex: 1;  
+            margin-left: 120px;
         }
 
         a{

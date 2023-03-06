@@ -38,6 +38,7 @@ export function AppHeader() {
             <p><a href="#">Model 3</a></p>
             <p><a href="#">Model X</a></p>
             <p><a href="#">Model Y</a></p>
+          
         </nav>
         <div className="shop-menu">
             <a href="#">Shop</a>
