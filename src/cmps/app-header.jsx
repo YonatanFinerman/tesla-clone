@@ -1,5 +1,16 @@
+import { useState } from "react";
 import { MdMenu } from "react-icons/md";
+import { SideBar } from "./side-bar";
+
+
 export function AppHeader() {
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    function onCloseSideBar(){
+        setIsMenuOpen(false)
+    }
+
     return <header className="app-header">
         <a href="">
             <svg width="100" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -31,8 +42,12 @@ export function AppHeader() {
         <div className="shop-menu">
             <a href="#">Shop</a>
             <a href="#">Tesla Account</a>
-            <MdMenu/>
+            <div onClick={() => {
+                setIsMenuOpen(prev => !prev)
+            }}><MdMenu /></div>
             {/* <a href="#">Shop</a> */}
         </div>
+
+       <SideBar isMenuOpen={isMenuOpen} onCloseSideBar={onCloseSideBar}/>
     </header>
 }
